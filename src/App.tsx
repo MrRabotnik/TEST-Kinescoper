@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState } from "react";
 import styled from "styled-components";
 import List from "./List";
@@ -34,6 +33,11 @@ const App: React.FC = () => {
     };
 
     const deleteItem = (id: number) => {
+        if (data.some((item) => item.id === id)) {
+            alert("You cannot delete a main parent item.");
+            return;
+        }
+
         const newData = data.filter((item) => item.id !== id);
         const removeFromParent = (items: any[]): any[] => {
             return items.map((item) => {
