@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import List from "./List";
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-`;
+import List from "./components/List/List";
+import { Container } from "./AppStyled";
 
 const App: React.FC = () => {
     const [data, setData] = useState<any[]>([

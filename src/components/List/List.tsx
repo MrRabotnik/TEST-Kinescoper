@@ -1,23 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-const ListContainer = styled.ul`
-    list-style: none;
-    padding: 0;
-`;
-
-const ListItem = styled.li`
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-const Button = styled.button`
-    margin-left: 10px;
-`;
+import { ListContainer, ListItem, Button, ChildList } from "./ListStyled";
 
 interface Item {
     id: number;
@@ -42,11 +24,13 @@ const List: React.FC<ListProps> = ({ items, addChild, deleteItem }) => {
                         <Button onClick={() => deleteItem(item.id)}>Delete</Button>
                     </div>
                     {item.children.length > 0 && (
-                        <List
-                            items={item.children}
-                            addChild={addChild}
-                            deleteItem={deleteItem}
-                        />
+                        <ChildList>
+                            <List
+                                items={item.children}
+                                addChild={addChild}
+                                deleteItem={deleteItem}
+                            />
+                        </ChildList>
                     )}
                 </ListItem>
             ))}
