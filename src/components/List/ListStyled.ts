@@ -3,16 +3,19 @@ import styled from "styled-components";
 export const ListContainer = styled.ul`
     list-style: none;
     padding: 0;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 `;
 
 export const ListItem = styled.li`
     margin: 10px 0;
-    padding: 15px;
+    padding: 3px;
     background-color: #f9f9f9;
-    border: 2px solid #ddd;
+    border: 2px solid #bbb;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
+    gap: 5px;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,12 +28,12 @@ export const ListItem = styled.li`
 
     & > div {
         display: flex;
-        gap: 10px;
+        gap: 5px;
     }
 `;
 
 export const Button = styled.button`
-    padding: 8px 12px;
+    padding: 4px 6px;
     border: none;
     border-radius: 5px;
     background-color: #007bff;
@@ -49,7 +52,7 @@ export const Button = styled.button`
 `;
 
 export const ChildList = styled.ul`
+    width: 90%;
     padding-left: 20px;
     margin-top: 10px;
-    border-left: 2px solid #ddd;
 `;
